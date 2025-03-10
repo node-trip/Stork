@@ -18,10 +18,27 @@
 
 ## Установка
 
+### Быстрая установка на сервере (рекомендуется)
+
+Для автоматической установки на сервере выполните одну команду:
+
+```bash
+curl -s https://raw.githubusercontent.com/node-trip/Stork/main/run-server.sh | bash
+```
+
+Этот скрипт:
+- Установит все необходимые зависимости (Node.js, Git, Screen)
+- Загрузит репозиторий с GitHub
+- Настроит автозапуск через systemd (если запущен от root)
+- Предложит запустить мастер настройки
+- Настроит и запустит бота
+
+### Ручная установка
+
 1. Клонируйте репозиторий:
 ```bash
-git clone https://github.com/YOUR_USERNAME/stork.git
-cd stork
+git clone https://github.com/node-trip/Stork.git
+cd Stork
 ```
 
 2. Установите зависимости:
@@ -79,6 +96,27 @@ npm run run
 
 ```bash
 npm run help
+```
+
+### Автозапуск через systemd (для серверов)
+
+После установки через скрипт `run-server.sh` можно управлять ботом с помощью systemd:
+
+```bash
+# Запуск бота
+sudo systemctl start stork
+
+# Остановка бота
+sudo systemctl stop stork
+
+# Проверка статуса
+sudo systemctl status stork
+
+# Включение автозапуска
+sudo systemctl enable stork
+
+# Отключение автозапуска
+sudo systemctl disable stork
 ```
 
 ## Структура файлов
