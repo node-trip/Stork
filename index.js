@@ -96,4 +96,5 @@ async function main() {
 // Запускаем приложение
 main().catch(err => {
   console.error('Произошла ошибка:', err);
-  process.exit(1); 
+  process.exit(1);
+}); 

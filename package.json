@@ -6,6 +6,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "start:no-dashboard": "DISABLE_DASHBOARD=true node index.js",
     "setup": "node index.js --setup",
     "quicksetup": "node simple-installer.js",
     "run": "node index.js --run",
